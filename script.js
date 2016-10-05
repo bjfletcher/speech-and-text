@@ -20,7 +20,11 @@ elements.final.appendChild(textNodes.final);
 elements.beta.appendChild(textNodes.beta);
 elements.alpha.appendChild(textNodes.alpha);
 
-var ws = new WebSocket('wss://10.113.193.100:8080');
+var ws = new WebSocket('wss://10.113.193.100:8443')
+
+ws.onerror = function(e) {
+	console.log(e);
+}
 
 ws.onmessage = function(m) {
 
